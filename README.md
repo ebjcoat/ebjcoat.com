@@ -1,1 +1,1 @@
-Landing page for my personal website <a href="ebjcoat.com">ebjcoat.com</a>
+Landing page for my personal website <a href="https://ebjcoat.com">ebjcoat.com</a>
