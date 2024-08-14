@@ -1,74 +1,104 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>When The World Goes Bad, ebjcoat Is There For You</title>
-  <style type="text/css" media="all">
-  <!--
-    A       {text-decoration: none; /* to remove the link underline */}
-    A:hover { text-decoration: underline }
-  -->
+  <style>
+    /* CSS for link styles */
+    a {
+      text-decoration: none; /* Remove underline from links by default */
+      color: inherit; /* Ensure links inherit text color */
+      position: relative; /* Position relative to use pseudo-elements */
+    }
+    a::after {
+      content: ''; /* Empty content for pseudo-element */
+      position: absolute;
+      left: 0;
+      bottom: -2px; /* Positioning the underline */
+      width: 100%;
+      height: 2px; /* Thickness of the underline */
+      background-color: transparent; /* Default transparent */
+      transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    a:hover::after {
+      background-color: currentColor; /* Match the text color */
+    }
+
+    /* Basic reset for margin and padding */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e0ddd6;
+      color: black;
+    }
+
+    /* Center content vertically and horizontally */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    /* Styling for navigation links */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 35px; /* Space between links */
+      font-size: 35px;
+      font-family: sans-serif;
+      color: rgba(128, 128, 128, 0.3);
+    }
+    .nav a {
+      padding: 0 1px;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease; /* Smooth color transition */
+    }
+    .nav .link1 { color: #000; }
+    .nav .link2 { background-color: #000; color: #fff; }
+    .nav .link3 { color: #fff; }
+
+    /* Reset margin and padding for the <p> element */
+    p {
+      margin: 0;
+      padding: 0;
+      color: #e0ddd6; /* Ensure the text color is correct */
+      font-family: monospace;
+    }
+
+    /* Footer styling */
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #b2b3b5;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
   </style>
 </head>
-
-<body text="black" link="#000000" vlink="#000000" alink="#000000" leftmargin="0" topmargin="0" onload="preloadImages();" bgcolor="#e0ddd6" marginheight="0" marginwidth="0">
-
-  <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
-    <tbody>
-      <tr>
-        <td align="center" valign="middle">
-          <table border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td style="align: center;" colspan="3">
-                  <a href="http://www.ericjeffcoat.com"><img src="images/index_01.jpg" alt="ebjcoat.com, where the web bangs its head" border="NONE"></a>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3">
-                  <div align="center">
-                    <font color="#e0ddd6">You Found The Forbidden Hidden Text!</font>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div align="center">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td width="200" style="font-family:arial; font-size: 25px; color: #000; text-align: center">
-                          <a href="http://www.ericjeffcoat.com"><b>PHOTOS</a></td>
-
-                        <td width="2" bgcolor="#000000"><b>&nbsp;</b></td>
-
-                        <td width="230" style="font-family:arial; font-size: 25px; color: #FFF; text-align: center">
-                          <a href="https://somafm.com/"><b>SOMETHING</b></a></td>     
-
-		            				<td width="2" bgcolor="#000000"><b>&nbsp;</b></td>
-
-				            		<td width="200" style="font-family:arial; font-size: 25px; color: #FFF; text-align: center">
-                          <a href="http://"><b>NOTHING</b></a>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td valign="bottom">
-          <div align="center">
-            <font size="-1" color="#b2b3b5" style="font-family: Arial, sans-serif;">Copyright &#169; 2004-<span id="currentYear"></span> ebjcoat.com, All Rights Reserved.</font>
-			<script>
-			// JavaScript to dynamically insert the current year
-			document.getElementById('currentYear').textContent = new Date().getFullYear();
-			</script>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+<body>
+  <div class="container">
+    <a href="http://www.ericjeffcoat.com">
+      <img src="images/index_01.jpg" alt="ebjcoat.com, where the web bangs its head">
+    </a>
+    <p style="color: #e0ddd6;">You Found The Forbidden Hidden Text!</p>
+    <div class="nav">
+      <a href="http://www.ericjeffcoat.com" class="link1">PHOTOS</a>|
+      <a href="https://somafm.com/" class="link1">SOMETHING</a>|
+      <a href="http://" class="link1">NOTHING</a>
+    </div>
+  </div>
+  <div class="footer">
+    Copyright &copy; 2004-<span id="currentYear"></span> ebjcoat.com, All Rights Reserved.
+  </div>
+  <script>
+    // JavaScript to dynamically insert the current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
